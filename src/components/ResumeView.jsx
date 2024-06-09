@@ -2,6 +2,7 @@ import { useState } from "react";
 import GeneralSection from "./GeneralSection";
 import EducationSection from "./EducationSection";
 import WorkExperienceSection from "./WorkExperienceSection";
+import LinkSection from "./LinkSection";
 import EditModal from "./EditModal";
 
 export default function ResumeView() {
@@ -52,21 +53,25 @@ export default function ResumeView() {
       endDate: "Jun 2028",
       description:
         "Assisted in managing entire company scheduling and delivery management lines.",
-    },
+    }
   ]);
 
+  const [linkInfo, setLinkInfo] = useState({
+    email: "hello@johnnylinton.com",
+    website: "https://johnnylinton.com",
+  });
+
   return (
-    <div>
+    <div className='resume-container'>
       <GeneralSection
         fullName={generalInfo.fullName}
         workingTitle={generalInfo.workingTitle}
-        email={generalInfo.email}
         location={generalInfo.location}
         about={generalInfo.about}
-        website={generalInfo.website}
       />
       <WorkExperienceSection workExperienceList={workExperienceInfo} />
       <EducationSection educationList={educationInfo} />
+      <LinkSection email={linkInfo.email} website={linkInfo.website} />
       <button onClick={() => setIsEditModalOpen(true)}>Edit</button>
       {isEditModalOpen && (
         <EditModal
@@ -76,6 +81,8 @@ export default function ResumeView() {
           setEducationInfo={setEducationInfo}
           workExperienceInfo={workExperienceInfo}
           setWorkExperienceInfo={setWorkExperienceInfo}
+          linkInfo={linkInfo}
+          setLinkInfo={setLinkInfo}
           onClose={() => setIsEditModalOpen(false)}
         />
       )}

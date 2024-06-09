@@ -5,6 +5,8 @@ export default function EditModal({
   setEducationInfo,
   workExperienceInfo,
   setWorkExperienceInfo,
+  linkInfo,
+  setLinkInfo,
   onClose,
 }) {
   const editGeneralInfo = (key, value) => {
@@ -23,6 +25,11 @@ export default function EditModal({
     newWorkExperienceInfo[index][key] = value;
     setWorkExperienceInfo(newWorkExperienceInfo);
   };
+
+  const editLinkInfo = (key, value) => {
+    const newLinkInfo = { ...linkInfo, [key]: value };
+    setLinkInfo(newLinkInfo);
+  }
 
   return (
     <div className="modal">
@@ -157,6 +164,19 @@ export default function EditModal({
             <hr></hr>
           </div>
         ))}
+        <h2>Links</h2>
+        <input
+          type="text"
+          value={linkInfo.email}
+          onChange={(e) => editLinkInfo("email", e.target.value)}
+          placeholder="Email"
+        />
+        <input
+          type="text"
+          value={linkInfo.website}
+          onChange={(e) => editLinkInfo("website", e.target.value)}
+          placeholder="Website"
+        />
 
         <button onClick={onClose}>Save</button>
       </div>
