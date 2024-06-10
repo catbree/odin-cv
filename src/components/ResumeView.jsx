@@ -14,7 +14,7 @@ export default function ResumeView() {
     email: "hello@johnnylinton.com",
     location: "Sunny Singapore",
     about:
-      "Passionate extrovert specialising in banding like-minded people together",
+      "Motivated student who demonstrates strong work ethics and creative ability. Seeking to apply my graphic design skills and artistic drive as a summer intern at your company.",
     website: "https://johnnylinton.com",
   });
 
@@ -22,7 +22,7 @@ export default function ResumeView() {
     {
       school: "Singapore Events Management University",
       degree: "Bachelors in Events Coordination",
-      startDate: " April 2020",
+      startDate: "Apr 2020",
       endDate: "Jun 2023",
       description:
         "Won the most innovative project award for ASEAN Business Hackathon 2023. Earned Sportsman of the Year 2023. Captain of the varsity basketball team. ",
@@ -31,7 +31,7 @@ export default function ResumeView() {
     {
       school: "Morgan Frudman University",
       degree: "Masters in Communication",
-      startDate: " Mar 2024",
+      startDate: "Mar 2024",
       endDate: "Jun 2027",
       description: "Masters thesis awarded highest accolades.",
     },
@@ -42,7 +42,7 @@ export default function ResumeView() {
       company: "Acme Properties Pte Ltd",
       positionTitle: "Senior Events Coordinator",
       startDate: "Dec 2028",
-      endDate: "August 2030",
+      endDate: "Aug 2030",
       description:
         "Led a team of 15 and was responsible for various events, such Outhood and OctoInk Fest.",
     },
@@ -53,7 +53,7 @@ export default function ResumeView() {
       endDate: "Jun 2028",
       description:
         "Assisted in managing entire company scheduling and delivery management lines.",
-    }
+    },
   ]);
 
   const [linkInfo, setLinkInfo] = useState({
@@ -62,7 +62,7 @@ export default function ResumeView() {
   });
 
   return (
-    <div className='resume-container'>
+    <div className="resume-container">
       <GeneralSection
         fullName={generalInfo.fullName}
         workingTitle={generalInfo.workingTitle}
@@ -72,7 +72,17 @@ export default function ResumeView() {
       <WorkExperienceSection workExperienceList={workExperienceInfo} />
       <EducationSection educationList={educationInfo} />
       <LinkSection email={linkInfo.email} website={linkInfo.website} />
-      <button onClick={() => setIsEditModalOpen(true)}>Edit</button>
+      <div className="main-action-group">
+        <button className="download-button">
+          <img src="./src/assets/pdf-icon.svg" alt="" />
+        </button>
+        <button
+          className="edit-button"
+          onClick={() => setIsEditModalOpen(true)}
+        >
+          <img src="./src/assets/edit-icon.svg" alt="" />
+        </button>
+      </div>
       {isEditModalOpen && (
         <EditModal
           generalInfo={generalInfo}

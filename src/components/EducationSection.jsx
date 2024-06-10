@@ -1,15 +1,17 @@
 export default function EducationSection({ educationList }) {
   return (
-    <div>
+    <div className="section">
       <h2>Education</h2>
       {educationList.map((education, index) => (
-        <div key={index}>
-          <p>{education.school}</p>
-          <p>{education.degree}</p>
-          <p>{education.startDate}</p>
-          <p>{education.endDate}</p>
-          <p>{education.description}</p>
-          <hr></hr>
+        <div key={index} className="two-col-entry">
+          <div className="col-left">
+            <p>{education.startDate + " - " + education.endDate}</p>
+          </div>
+          <div className="col-right">
+            <p><strong>{education.school}</strong></p>
+            <p>{education.degree}</p>
+            <p>{education.description}</p>
+          </div>
         </div>
       ))}
     </div>
