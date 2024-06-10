@@ -62,16 +62,6 @@ export default function EditModal({
             </label>
 
             <label>
-              Email
-              <input
-                type="text"
-                value={generalInfo.email}
-                onChange={(e) => editGeneralInfo("email", e.target.value)}
-                placeholder="Email"
-              />
-            </label>
-
-            <label>
               Location
               <input
                 type="text"
@@ -88,16 +78,6 @@ export default function EditModal({
                 value={generalInfo.about}
                 onChange={(e) => editGeneralInfo("about", e.target.value)}
                 placeholder="Short bio"
-              />
-            </label>
-
-            <label>
-              Website
-              <input
-                type="text"
-                value={generalInfo.website}
-                onChange={(e) => editGeneralInfo("website", e.target.value)}
-                placeholder="Website"
               />
             </label>
           </div>
@@ -258,7 +238,9 @@ export default function EditModal({
         </div>
 
         <div className="modal-footer">
-          <button className="save-button" onClick={onClose}>Save</button>
+          <button className="save-button" onClick={onClose}>
+            Save
+          </button>
         </div>
       </div>
     </div>
