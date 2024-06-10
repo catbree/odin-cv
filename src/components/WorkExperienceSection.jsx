@@ -5,12 +5,12 @@ export default function WorkExperienceSection({ workExperienceList }) {
       {workExperienceList.map((workExperience, index) => (
         <div key={index} className='two-col-entry'>
           <div className='col-left'>
-            <p>{workExperience.startDate + " - " + workExperience.endDate}</p>
+            <p className="subText">{workExperience.startDate + " - " + workExperience.endDate}</p>
           </div>
           <div className='col-right'>
           <p><strong>{workExperience.company}</strong></p>
           <p>{workExperience.positionTitle}</p>
-          <p>{workExperience.description}</p>
+          <p className="subText">{workExperience.description}</p>
           </div>
         </div>
       ))}

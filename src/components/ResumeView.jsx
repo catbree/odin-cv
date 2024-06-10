@@ -14,7 +14,7 @@ export default function ResumeView() {
     email: "hello@johnnylinton.com",
     location: "Sunny Singapore",
     about:
-      "Motivated student who demonstrates strong work ethics and creative ability. Seeking to apply my graphic design skills and artistic drive as a summer intern at your company.",
+      "Seeking to apply my graphic design skills and artistic drive as a summer intern at your company.",
     website: "https://johnnylinton.com",
   });
 
@@ -73,7 +73,7 @@ export default function ResumeView() {
       <EducationSection educationList={educationInfo} />
       <LinkSection email={linkInfo.email} website={linkInfo.website} />
       <div className="main-action-group">
-        <button className="download-button">
+        <button className="download-button" onClick={() => window.print()}>
           <img src="./src/assets/pdf-icon.svg" alt="" />
         </button>
         <button

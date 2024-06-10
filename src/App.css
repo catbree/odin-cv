@@ -2,14 +2,13 @@
   margin: 0;
   padding: 0;
   font-family: Helvetica, sans-serif;
-
 }
 
 #root {
- background-color: rgb(238, 238, 238);
- padding-top: 3%;
- padding-bottom: 3%;
- font-size: 18px;
+  background-color: rgb(238, 238, 238);
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-size: 18px;
 }
 
 .resume-container {
@@ -18,7 +17,8 @@
   width: 21cm;
   height: 29.7cm;
   margin: auto;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, .1), 0 8px 16px -8px rgba(0, 0, 0, .25);
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.1),
+    0 8px 16px -8px rgba(0, 0, 0, 0.25);
 }
 
 .section {
@@ -28,15 +28,16 @@
   padding-right: 64px;
 }
 
-.section:nth-child(-n+1) {
+.section:nth-child(-n + 1) {
   padding-bottom: 40px;
 }
 
 .general-section {
-  background-color: lightblue;
+  background-color: rgb(21, 73, 47);
+  color: white;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
   text-align: center;
 }
 
@@ -62,13 +63,13 @@
 
 .modal {
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);  
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,11 +117,11 @@
 }
 
 .modal-body > h2 {
-font-size: 1.5rem;
-margin: 0;
-padding: 0;
-background-color: white;
-margin-bottom: 8px;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  margin-bottom: 8px;
 }
 
 .section-content {
@@ -137,7 +138,7 @@ label {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0;
-  padding:0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;
@@ -161,7 +162,7 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-  background-color: lightsteelblue;
+  background-color: rgba(14, 55, 78, 0.07);
   margin: 0;
   padding: 0;
   margin-bottom: 24px;
@@ -171,6 +172,11 @@ h2 {
 p {
   margin: 0;
   padding: 0;
+}
+
+.subText {
+  font-size: 1rem;
+  opacity: 0.7;
 }
 
 .main-action-group {
@@ -192,4 +198,24 @@ p {
 .save-button {
   font-size: 1rem;
   padding: 8px 16px;
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  body {
+    visibility: hidden;
+  }
+
+  #root {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .resume-container {
+    visibility: visible;
+    box-shadow: none;
+  }
 }
