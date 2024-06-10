@@ -5,6 +5,9 @@ import WorkExperienceSection from "./WorkExperienceSection";
 import LinkSection from "./LinkSection";
 import EditModal from "./EditModal";
 
+import editIcon from "../assets/edit-icon.svg";
+import pdfIcon from "../assets/pdf-icon.svg";
+
 export default function ResumeView() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
@@ -74,13 +77,13 @@ export default function ResumeView() {
       <LinkSection email={linkInfo.email} website={linkInfo.website} />
       <div className="main-action-group">
         <button className="download-button" onClick={() => window.print()}>
-          <img src="./src/assets/pdf-icon.svg" alt="" />
+          <img src={pdfIcon} alt="" />
         </button>
         <button
           className="edit-button"
           onClick={() => setIsEditModalOpen(true)}
         >
-          <img src="./src/assets/edit-icon.svg" alt="" />
+          <img src={editIcon} alt="" />
         </button>
       </div>
       {isEditModalOpen && (
