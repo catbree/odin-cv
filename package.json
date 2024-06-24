@@ -2,7 +2,7 @@
   "name": "odin-cv",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://catbree.github.io/odin-cv",
+  "homepage": "https://catbree.github.io/odin-cv/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
